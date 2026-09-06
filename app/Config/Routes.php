@@ -13,3 +13,7 @@ $routes->get('departments/cvm', 'DepartmentController::cvm');
 $routes->get('departments/ced', 'DepartmentController::ced');
 $routes->get('/research', 'Research::index');
 $routes->get('about', 'Home::about');
+
+$routes->get('debug-baseurl', static function () {
+    echo 'baseURL: ' . config('App')->baseURL;
+});
