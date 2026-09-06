@@ -24,32 +24,26 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
-    public array $default = [
-        'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => '',
-        'password'     => '',
-        'database'     => '',
-        'DBDriver'     => 'MySQLi',
-        'DBPrefix'     => '',
-        'pConnect'     => false,
-        'DBDebug'      => true,
-        'charset'      => 'utf8',
-        'DBCollat'     => 'utf8mb4_general_ci',
-        'swapPre'      => '',
-        'encrypt'      => false,
-        'compress'     => false,
-        'strictOn'     => false,
-        'failover'     => [],
-        'port'         => 3306,
-        'numberNative' => false,
-        'foundRows'    => false,
-        'dateFormat'   => [
-            'date'     => 'Y-m-d',
-            'datetime' => 'Y-m-d H:i:s',
-            'time'     => 'H:i:s',
-        ],
-    ];
+   public array $default = [
+    'DSN'          => '',
+    'hostname'     => env('database.default.hostname', 'aws-0-ap-south-1.pooler.supabase.com'),
+    'username'     => env('database.default.username', 'postgres.evbhxyatmmlhjcfdjqrl'),
+    'password'     => env('database.default.password', 'tauwebsitedatabase28'),
+    'database'     => env('database.default.database', 'postgres'),
+    'DBDriver'     => env('database.default.DBDriver', 'Postgre'),
+    'DBPrefix'     => '',
+    'pConnect'     => false,
+    'DBDebug'      => true,
+    'charset'      => 'utf8',
+    'DBCollat'     => 'utf8_general_ci',
+    'swapPre'      => '',
+    'encrypt'      => false,
+    'compress'     => false,
+    'strictOn'     => false,
+    'failover'     => [],
+    'port'         => env('database.default.port', 6543),
+    'numberNative' => false,
+];
 
     //    /**
     //     * Sample database connection for SQLite3.
